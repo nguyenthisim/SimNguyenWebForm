@@ -1,0 +1,190 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FrontEnd.master.cs" Inherits="GUI.Views.Customer.FrontEnd" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../../contents/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../contents/CusStyle.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link href="../../contents/cuscss/bootstrap.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/animate.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/flag-icon.min.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/style.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/themify-icons.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/home.css" rel="stylesheet" />
+    <link href="../../contents/cuscss/index.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:salmon;">
+        <div class="container" style="height:40px;">
+            <a class="navbar-brand" href="Home.html">
+                <img class="align-content" src="/Contents/images/logoDOPE.png" alt="DOPE">
+            </a>
+            <div class="search-form">
+                <form>
+                    <asp:TextBox ID="txtTim" runat="server" placeholder="Nhập tên sản phẩm cần tìm kiếm..."></asp:TextBox>
+                    <asp:Button ID="btnTim" runat="server" Text="Tìm kiếm" BackColor="#003399" ForeColor="White" />
+                   
+                </form>
+            </div>
+            <div class="toolbar-link">
+                <ul>
+                    <li>
+                        <a href="Cart.html">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Giỏ hàng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            Tài khoản
+                        </a>
+                        <ul class="account-menu">
+                            <li><a href="Dangnhap.html">Đăng nhập</a></li>
+                            <li><a href="Dangki.html">Đăng kí</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="height:40px;">
+            <div class="nav">
+                <ul class="main-menu">
+                    <li><a href="#">TRANG CHỦ</a></li>
+                    <li class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <ul class="dropdown-menu menu2 bg-dark">
+                            <li class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#">ÁO</a>
+                                <ul class="dropdown-menu menu3 bg-dark">
+                                    <li><a href="Aosomi.html">ÁO SƠ MI</a></li>
+                                    <li><a href="#">ÁO POLO</a></li>
+                                    <li><a href="#">ÁO T-SHIRT</a></li>
+                                    <li><a href="#">ÁO TANK-TOP</a></li>
+                                    <li><a href="#">ÁO THUN TAY DÀI</a></li>
+                                    <li><a href="#">ÁO BLAZER</a></li>
+                                    <li><a href="#">ÁO LEN</a></li>
+                                    <li><a href="#">ÁO KHOÁC</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#">QUẦN</a>
+                                <ul class="dropdown-menu menu3 bg-dark">
+                                    <li><a href="#">QUẦN ÂU</a></li>
+                                    <li><a href="#">QUẦN KAKI</a></li>
+                                    <li><a href="#">QUẦN SHORT</a></li>
+                                    <li><a href="#">QUẦN THỂ THAO</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#">ĐỒ LÓT</a>
+                                <ul class="dropdown-menu menu3 bg-dark">
+                                    <li><a href="#">BOXER</a></li>
+                                    <li><a href="#">BRIEF</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#">COMBO</a>
+                                <ul class="dropdown-menu menu3 bg-dark">
+                                    <li><a href="#">BỘ SUIT</a></li>
+                                    <li><a href="#">BỘ ĐỒ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#">PHỤ KIỆN</a>
+                                <ul class="dropdown-menu menu3 bg-dark">
+                                    <li><a href="#">THẮT LƯNG</a></li>
+                                    <li><a href="#">VÍ NAM</a></li>
+                                    <li><a href="#">CÀ VẠT</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">KHUYẾN MÃI</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><%--End navbar--%>
+         <div class="main-content">
+             <div class="container-fluid">
+           <button id="myBtn" title="Go to top">Back To Top</button>
+           <div class="row">
+               <div class="col-lg-2">
+                    <div class="filter-container menumaster">
+                        <h3>Danh mục sản phẩm</h3>
+                      <ul>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH1">Dụng Cụ Văn Phòng</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH2">Dụng Cụ Học Sinh</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH3">Bút - Viết các loại</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH4">Sổ tay các loại</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH5">Tập Vở Học Sinh</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH6">Flashcards</a></li>
+                          <li><a href="LoaiHang.aspx?LoaiHangID=LH7">Bút Chì Màu - Bút Lông Màu - Bút Sáp Màu</a></li>                       
+                      </ul>
+                 
+                  </div><%-- end mainLeft--%>
+                   <br />
+                   <div class="filter-container menuTH">
+                       <h4>THƯƠNG HIỆU</h4>
+                      <ul>
+                          <li><a href="ThuongHieu.aspx?ThuongHieuID=TH1">Deli</a></li>
+                          <li><a href="ThuongHieu.aspx?ThuongHieuID=TH2">Omeni</a></li>                                            
+                      </ul>
+                   </div>
+                   <!-- End filter -->
+                 
+               </div>
+               <!-- /.col-lg-3 -->
+
+               <div class="col-lg-10">
+                       <asp:ContentPlaceHolder ID="main_body" runat="server">
+                        Nọi dung tin ở đay
+                    </asp:ContentPlaceHolder>
+              </div><!-- /.col-lg-9 -->
+          </div> <%--End row chính--%>
+              </div><%--End container--%>
+        </div><%--End main-content--%>
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p><h2><asp:Label ID="lblSLKhach" runat="server"></asp:Label></h2></p>
+                <p class="m-0 text-center text-white">Copyright &copy; DOPE Website 2018</p>
+            </div>
+            <!-- /.container -->
+        </footer><%--End footer--%>
+    </div> <%--End Page--%>
+    </form>
+    <script src="../../contents/bootstrap.min.js"></script>
+    <script>
+        //doạn js nãy ở đâu
+        //Khi người dùng cuộn chuột thì gọi hàm scrollFunction
+        window.onscroll = function() {scrollFunction()};
+        // khai báo hàm scrollFunction
+        function scrollFunction() {
+            // Kiểm tra vị trí hiện tại của con trỏ so với nội dung trang
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                //nếu lớn hơn 20px thì hiện button
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                 //nếu nhỏ hơn 20px thì ẩn button
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        //gán sự kiện click cho button
+        document.getElementById('myBtn').addEventListener("click", function(){
+            //Nếu button được click thì nhảy về đầu trang
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>

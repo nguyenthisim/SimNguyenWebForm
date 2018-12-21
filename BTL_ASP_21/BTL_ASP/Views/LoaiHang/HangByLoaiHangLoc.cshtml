@@ -1,0 +1,93 @@
+﻿@using BTL_ASP.Models;
+@model List<Hang>
+@{
+    ViewBag.Title = "HangByLoaiHangLoc";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+@ViewBag.Hang
+<br /><br />
+<div class="flex-sb-m flex-w p-b-35">
+
+    <div class="flex-w">
+        <div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
+            <select class="selection-2" name="sorting">
+                <option>Default Sorting</option>
+                @Html.Action("LoaiHangLocPartial", "LoaiHang")
+            </select>
+        </div>
+    </div>
+</div>
+<br /><br />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Hàng
+        </th>
+        <th>
+            SKU
+        </th>
+        <th>
+            Image
+        </th>
+
+        <th>
+            Số Lượng
+        </th>
+        <th>
+            Đơn Giá
+        </th>
+        <th>
+            Loại Hàng
+        </th>
+        <th>
+            Ngày Tạo
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HangName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKU)
+            </td>
+            <td>
+                <img src="@Url.Content(item.HangImage)" alt="IMG" style="width:60px; height:60px;" />
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiHang.LoaiHangName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { @HangID = item.HangID }) |
+                @Html.ActionLink("Details", "Details", new { @HangID = item.HangID }) |
+                @Html.ActionLink("Delete", "Delete", new { @HangID = item.HangID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+

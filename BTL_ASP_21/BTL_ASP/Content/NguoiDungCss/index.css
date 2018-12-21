@@ -1,0 +1,32 @@
+﻿
+
+.data{
+    
+}
+.student-info{
+    padding:4px;
+    margin:2px;
+    border-radius:3px;
+    border: 1px solid #808080;
+    width:200px;
+    height:300px;
+    
+}
+
+.student-name{
+    color:#fff;
+    background-color:#30a063;
+    padding:4px 2px;
+    font-size:24px;
+    text-align:center;
+}
+
+.student-image {
+    width: 100px;
+    height: 150px;
+}
+
+.student-image img{
+    width: 100px;
+    height: 150px;
+}

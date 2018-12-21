@@ -1,0 +1,5 @@
+D:\nam4\ASP webform\BTL_WebsiteOnline\DTO\bin\Debug\DTO.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\DTO\bin\Debug\DTO.pdb
+D:\nam4\ASP webform\BTL_WebsiteOnline\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\nam4\ASP webform\BTL_WebsiteOnline\DTO\obj\Debug\DTO.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\DTO\obj\Debug\DTO.pdb

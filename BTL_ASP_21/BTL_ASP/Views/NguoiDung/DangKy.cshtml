@@ -1,0 +1,99 @@
+﻿@model BTL_ASP.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Layout/OtherLayout.cshtml";
+}
+
+<div style="width: 500px; margin-left: 300px;">
+<h3>Đăng kí để tận hưởng các ưu đãi!</h3>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+          
+            <div class="col-md-10">
+              Họ và tên:  @Html.EditorFor(model => model.KhachHangName, new { htmlAttributes = new { @class = "form-control" } })
+              <span id="loiHoTen"></span>
+                  @Html.ValidationMessageFor(model => model.KhachHangName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+             Email:   @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                <span id="loiEmail"></span>
+                  @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+              Số điện thoại:  @Html.EditorFor(model => model.SoDienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+          
+            <div class="col-md-10">
+              Địa chỉ:  @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+              Password:  @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="btnSubmit" type="submit" value="Đăng kí" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+</div>
+@*<script type="text/javascript">
+    $('#btnSubmit').click(function () {
+        var loi = 0;
+        if ($('#KhachHangName').val() == "") {
+            $('#loiHoTen').text("ho ten trong!");
+            loi++;
+            return false;
+        }
+        else {
+            $('#loiHoTen').text('');
+        }
+        if ($('#Email').val() == "") {
+            $('#loiEmail').text("can dien email trong!");
+            loi++;
+            return false;
+        }
+        else {
+            $('#loiEmail').text('');
+        }
+        if (loi != 0) {
+            return false
+        }
+        else {
+            return true;
+        }
+    });
+</script>*@

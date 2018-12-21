@@ -1,0 +1,16 @@
+﻿<div class="row-fluid">
+    <div class="span6">
+
+    </div>
+    <div class="span6">
+        @using (Html.BeginForm("KetQuaTimKiem", "QuanLySanPham", FormMethod.Post))
+        {
+            <span> Search:</span>
+            @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "s-text7 size6 p-l-23 p-r-50", @placeholder = "Search Products..." })
+            <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+                <i class="halflings-icon search" aria-hidden="true"></i>
+            </button>
+        }
+
+    </div>
+</div>

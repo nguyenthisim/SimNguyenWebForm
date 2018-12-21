@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TikiNowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="HangID" />
+    </Key>
+    <Property Name="HangID" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="HangName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="500" />
+    <Property Name="HangImage" Type="nvarchar" MaxLength="500" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="DonGia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LoaiHangID" Type="nchar" MaxLength="10" />
+    <Property Name="ThuongHieuID" Type="nchar" MaxLength="10" />
+    <Property Name="NhaCungCapID" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KhachHangName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="SoDienThoai" Type="nchar" MaxLength="100" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="LoaiHang">
+    <Key>
+      <PropertyRef Name="LoaiHangID" />
+    </Key>
+    <Property Name="LoaiHangID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LoaiHangName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="NhaCungCapID" />
+    </Key>
+    <Property Name="NhaCungCapID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="NhaCungCapName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NhaCungCapDiaChi" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QTAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ThuongHieu">
+    <Key>
+      <PropertyRef Name="ThuongHieuID" />
+    </Key>
+    <Property Name="ThuongHieuID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ThuongHieuName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Hang_LoaiHang">
+    <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="0..1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="LoaiHangID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="LoaiHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hang_NhaCungCap">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="NhaCungCapID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="NhaCungCapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hang_ThuongHieu">
+    <End Role="ThuongHieu" Type="Self.ThuongHieu" Multiplicity="0..1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThuongHieu">
+        <PropertyRef Name="ThuongHieuID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="ThuongHieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_TikiNowModelStoreContainer">
+    <EntitySet Name="Hang" EntityType="Self.Hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiHang" EntityType="Self.LoaiHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QTAdmin" EntityType="Self.QTAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThuongHieu" EntityType="Self.ThuongHieu" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Hang_LoaiHang" Association="Self.FK_Hang_LoaiHang">
+      <End Role="LoaiHang" EntitySet="LoaiHang" />
+      <End Role="Hang" EntitySet="Hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hang_NhaCungCap" Association="Self.FK_Hang_NhaCungCap">
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
+      <End Role="Hang" EntitySet="Hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hang_ThuongHieu" Association="Self.FK_Hang_ThuongHieu">
+      <End Role="ThuongHieu" EntitySet="ThuongHieu" />
+      <End Role="Hang" EntitySet="Hang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

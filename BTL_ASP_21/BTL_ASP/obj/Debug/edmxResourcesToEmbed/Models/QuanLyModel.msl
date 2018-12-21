@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_TikiNowModelStoreContainer" CdmEntityContainer="DB_TikiNowEntities">
+    <EntitySetMapping Name="Hangs">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.Hang">
+        <MappingFragment StoreEntitySet="Hang">
+          <ScalarProperty Name="HangID" ColumnName="HangID" />
+          <ScalarProperty Name="HangName" ColumnName="HangName" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="HangImage" ColumnName="HangImage" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="LoaiHangID" ColumnName="LoaiHangID" />
+          <ScalarProperty Name="ThuongHieuID" ColumnName="ThuongHieuID" />
+          <ScalarProperty Name="NhaCungCapID" ColumnName="NhaCungCapID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiHangs">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.LoaiHang">
+        <MappingFragment StoreEntitySet="LoaiHang">
+          <ScalarProperty Name="LoaiHangID" ColumnName="LoaiHangID" />
+          <ScalarProperty Name="LoaiHangName" ColumnName="LoaiHangName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="NhaCungCapID" ColumnName="NhaCungCapID" />
+          <ScalarProperty Name="NhaCungCapName" ColumnName="NhaCungCapName" />
+          <ScalarProperty Name="NhaCungCapDiaChi" ColumnName="NhaCungCapDiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QTAdmins">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.QTAdmin">
+        <MappingFragment StoreEntitySet="QTAdmin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThuongHieux">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.ThuongHieu">
+        <MappingFragment StoreEntitySet="ThuongHieu">
+          <ScalarProperty Name="ThuongHieuID" ColumnName="ThuongHieuID" />
+          <ScalarProperty Name="ThuongHieuName" ColumnName="ThuongHieuName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="DB_TikiNowModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="KhachHangName" ColumnName="KhachHangName" />
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

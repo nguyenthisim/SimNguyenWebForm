@@ -1,0 +1,19 @@
+﻿@using BTL_ASP.Models;
+@model List<ThuongHieu>
+
+<h4 class="m-text14 p-b-7">
+    Thương hiệu
+</h4>
+
+<ul class="p-b-54">
+    @{foreach (var item in Model)
+        {
+            <li class="p-t-4">
+                <a href="@Url.Action("HangByThuongHieu",new { @thuongHieuID=item.ThuongHieuID})" class="s-text13 active1">
+                    @item.ThuongHieuName
+                </a>
+            </li>
+        }
+    }
+</ul>
+

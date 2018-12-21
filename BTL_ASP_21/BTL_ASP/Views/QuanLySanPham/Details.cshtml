@@ -1,0 +1,112 @@
+﻿@model BTL_ASP.Models.Hang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <div class="row-fluid sortable">
+        <div class="box-content">
+
+            <div class="form-horizontal">
+
+                <hr />
+              
+                <div class="control-group">
+                    <label class="control-label" for="date01">Mã hàng: </label>
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.HangID)
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="date01">Tên hàng:</label>
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.HangName)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.SKU, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.SKU)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Image </label>
+                    <div class="controls">
+                        <img src="@Url.Content(Model.HangImage)" alt="IMG" style="width:60px; height:60px;" />
+                     
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.Note)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Số Lượng:</label>
+                    <div class="controls">
+                      @Html.DisplayFor(model => model.SoLuong)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Đơn Giá: </label>
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.DonGia)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Loại Hàng: </label>
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.LoaiHang.LoaiHangName)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Thương Hiệu: </label>
+                    <div class="controls">
+                     @Html.DisplayFor(model => model.ThuongHieu.ThuongHieuName)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="date01">Nhà Cung Cấp: </label>
+                    <div class="controls">
+                     @Html.DisplayFor(model => model.NhaCungCap.NhaCungCapName)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="controls">
+                       @Html.DisplayFor(model => model.CreatedDate)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="date01">Mô tả hàng: </label>
+                    <div class="controls">
+                        <textarea rows="3">
+                            @Html.DisplayFor(model => model.MoTa)
+                        </textarea>
+                       
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<p style="color:red;">
+    @Html.ActionLink("Edit", "Edit", new {@HangID = Model.HangID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

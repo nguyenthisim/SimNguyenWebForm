@@ -1,0 +1,389 @@
+﻿.search-form{
+    margin-left:150px;
+}
+.search-form input[type="text"]{
+    width:300px;   
+    border-radius: 10px;
+    line-height: 25px;
+}
+.search-form input[type="submit"]{
+    border-radius: 10px;
+}
+.toolbar-link{
+
+}
+.toolbar-link li{
+     display:inline-block;
+     padding:20px 20px 0px 20px;
+     position: relative;
+}
+.toolbar-link li:hover> .account-menu{
+    display:block;
+}
+
+.account-menu{
+    
+    position:absolute;
+    border:none;
+    display:none;
+
+}
+.account-menu li{			
+ position: relative;
+ display: block;
+
+ padding:20px;
+}
+.account-menu li:hover{
+     background:#b60000;
+}
+.toolbar-link a{
+    color:#ffffff;
+}
+ul{
+    list-style-type:none;
+}
+a{
+    text-decoration: none;
+}
+.nav ul{
+ 
+}
+.nav li{
+    display:inline-block;
+    padding:20px 20px 0px 20px;
+}
+.nav a{
+    font-size:18px;
+    color:#ffffff;
+}
+.nav {
+  
+}
+.main-menu{
+    
+}
+.main-menu li{			
+    position: relative;
+    display: inline-block;
+		}	
+.main-menu a{
+    display:block;
+}	
+.main-menu  a:hover{
+    color:#ff0000;
+}
+.main-menu >li:hover> .menu2{
+    display:block;
+}
+
+.menu2{
+    min-width: 220px;
+    position:absolute;
+    border:none;
+    display:none;
+}
+.menu2 li{			
+ position: relative;
+display: block;
+}
+.menu2 >li:hover> .menu3{
+    display:block;
+}
+.menu3{  
+    position:absolute;
+    border:none;
+    display:none;
+    top:0;
+    left:100%;
+    min-width: 220px;
+}
+.menu3 li{			
+ position: relative;
+  display: block;
+}
+
+.main-slider {
+    position: relative;
+     margin-top:132px;
+}
+.main-slider img{
+  width: 1349px;
+}
+.main-content-home{
+    margin-top:20px;
+}
+.title-default{
+    text-align:center;
+    margin:20px;
+    font-size:25px;
+}
+.title--default span {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+}
+.desc {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 99;
+}
+.title_banner {
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 2% 0;
+}
+.item{
+    position: relative;
+}
+/*San pham.html*/
+.main-content{
+    position: relative;
+     margin-top:150px;
+     margin-bottom:30px;
+}
+.section-header {
+    margin-bottom: 20px;
+}
+.parallax-text{
+        font-size: 25px;
+}
+.aside-filter p.title {
+    color: #222;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.pro-wrap a{
+    padding:10px;
+}
+.pro-wrap-img{
+    float:left;
+    width:35%;
+}
+.pro-wrap-info{
+    float:right;
+    margin-top:10px;
+    width:65%;
+}
+.pro-wrap-title{
+    color:#000000;
+}
+.pro-wrap-price{
+    margin-top:8px;
+}
+.current-price{
+    color:#ff0000;
+}
+/* go to up*/
+#myBtn {
+              display: none; /* Mặc định button sẽ được ẩn*/
+              position: fixed;
+              bottom: 20px;
+              right: 30px; 
+              z-index: 99; /* button được ưu tiên hiển thị đè lên các phần khác*/
+              border: none;
+              outline: none;
+              background-color: red;
+              color: white;
+              cursor: pointer;
+              padding: 15px;
+              border-radius: 10px;
+            }
+             
+            #myBtn:hover {
+              background-color: #555;
+}
+
+   /*Cart- giỏ hàng*/
+   .main-content h1{
+       color:#808080;
+       font-size:25px;
+       margin-bottom:20px;
+   }
+   .shopping-cart{
+       width:100%;
+   }
+   .column-label{  
+    color:rgba(0, 0, 0, 0.6);
+    width:auto;
+    height:50px;
+    font-size:20px;
+    border-bottom:1px solid #808080;
+    border-top:1px solid #808080;
+}
+
+.product-image { float: left; width: 25%; }
+.product-details { float: left; width: 20%; }
+.product-price { float: left; width: 15%; }
+.product-quantity { float: left; width: 15%; }
+.product-removal { float: left; width: 10%; }
+.product-line-price { float: left; width: 15%; text-align:center; }
+.product{
+    margin-top:20px;
+    
+}
+.product img{
+    width:200px;
+    height:200px;
+    padding:5px;
+}
+.product-quantity  input {
+      width: 100px;
+      
+    }
+
+.remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
+  .remove-product:hover {
+    background-color: #a44;
+  }
+  .cart-total{
+     margin-top:50px;
+     min-width:300px;
+     float:right;
+  }
+.totals{
+ 
+}
+ .totals-value{
+    float:right;
+}
+.totals button{
+   margin-left:80px;
+   margin-bottom:10px;
+}
+/* chi tiết sản phẩm */
+.item-content{
+    height:500px;
+}
+.item-image{
+    float:left;
+}
+
+.item-detail{
+  padding:10px 100px;
+}
+.item-detail h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+.product-more-info {
+    font-size: 15px;
+    margin: 0;
+}
+.quantity-selector input{
+    width:100px;
+    margin-left:30px;
+}
+.item-description{
+
+}
+.item-description h2{
+    font-size:25px;
+   margin-bottom:20px;
+}
+/*Login and register trang*/
+.login-and-register{
+    margin-left:50px;
+    margin-right:50px;
+}
+.login-and-register h1{
+    text-align:center;
+}
+.login-and-register input{
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    max-width: 100%;
+    padding: 8px 10px;
+    border-radius: 0;
+    width: 100%;
+}
+.login-and-register input[type=button]{
+  
+
+}
+.hidden-label {
+    position: absolute;
+    height: 0;
+    width: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.login-and-register p a {
+   margin-left:200px;
+}
+/*menu ở backend.master*/
+.menumaster{
+    
+}
+.menumaster ul{
+    padding-top:20px;
+    padding-left:10px;
+  
+    
+}
+.menumaster li{
+    list-style:none;
+    padding-left:10px;
+    padding-top:20px;
+    padding-bottom:10px;
+    border-bottom:solid 3px white;
+    
+}
+.menumaster ul li:hover {
+    background-color: maroon;
+}
+.menumaster ul li:hover a {
+    color:white;
+}
+.menumaster ul li a{
+    display:block;	
+	padding-left:22px;	
+	text-decoration:none;
+	color:black;
+    font-size: 16px;
+}
+/*menu ở thuonghieu*/
+.menuTH{
+    background-color:aqua;
+}
+.menuTH ul{
+    padding-top:20px;
+    padding-left:10px;   
+}
+.menuTH li{
+    list-style:none;  
+}
+.menuTH ul li a{
+	color:black;
+}
+/* Products*/
+.ttanh{
+    width:220px;
+}

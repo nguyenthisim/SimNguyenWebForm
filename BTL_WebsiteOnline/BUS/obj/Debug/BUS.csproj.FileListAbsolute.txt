@@ -1,0 +1,9 @@
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\BUS.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\BUS.pdb
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\DAL.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\DTO.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\DAL.pdb
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\bin\Debug\DTO.pdb
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\obj\Debug\BUS.dll
+D:\nam4\ASP webform\BTL_WebsiteOnline\BUS\obj\Debug\BUS.pdb

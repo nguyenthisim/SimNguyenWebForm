@@ -1,0 +1,16 @@
+﻿@using BTL_ASP.Models;
+@model List<LoaiHang>
+
+
+
+    @{foreach (var item in Model)
+        {
+            <li>
+                <a href="@Url.Action("HangByLoaiHang",new { @loaiHangID=item.LoaiHangID})">
+                    @item.LoaiHangName
+                </a>
+            </li>
+        }
+
+    }
+   

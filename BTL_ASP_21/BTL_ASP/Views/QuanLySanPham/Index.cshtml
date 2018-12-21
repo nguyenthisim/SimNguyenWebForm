@@ -1,0 +1,200 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<BTL_ASP.Models.Hang>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<br />
+<div class="row-fluid">
+    <div class="span6">
+
+    </div>
+    <div class="span6">
+        @using (Html.BeginForm("KetQuaTimKiem", "QuanLySanPham", FormMethod.Post))
+        {
+            <span> Search:</span>
+            @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "s-text7 size6 p-l-23 p-r-50", @placeholder = "Search Products..." })
+            <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+                <i class="halflings-icon search" aria-hidden="true"></i>
+            </button>
+        }
+
+    </div>
+</div>
+@using (Html.BeginForm("Index", "QuanLySanPham", FormMethod.Get))
+{
+    <p>
+        @Html.Hidden("page", (object)ViewBag.page)
+        @Html.Hidden("sortProperty", (object)ViewBag.sortProperty)
+        @Html.Hidden("sortOrder", (object)ViewBag.sortOrder)
+        @Html.Hidden("size", (object)ViewBag.pageSize)
+    </p>
+}
+   
+    <p class="newitem">
+        @Html.ActionLink("Thêm mới", "CreateHang")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+              Tên Hàng
+            </th>
+            <th>
+                SKU
+            </th>
+            <th>
+                Image
+            </th>
+
+            <th>
+                @Html.ActionLink("Số Lượng", "Index", new {size= ViewBag.currentSize,page = ViewBag.page, sortOrder = ViewBag.SoLuongSortParm })
+            </th>
+            <th>
+                Đơn Giá
+            </th>
+            <th>
+                Loại Hàng
+            </th>
+            <th>
+                Ngày Tạo
+            </th>
+            <th></th>
+        </tr>
+       
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.HangName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SKU)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.HangImage)" alt="IMG" style="width:60px; height:60px;" />
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiHang.LoaiHangName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { @HangID = item.HangID }) |
+                    @Html.ActionLink("Details", "Details", new { @HangID = item.HangID }) |
+                    @Html.ActionLink("Delete", "Delete", new { @HangID = item.HangID }, new { onclick = "return confirm('Are you sure you wish to delete this?');" })
+                </td>
+            </tr>
+        }
+
+    </table>
+<div style="clear:both;"></div>
+<!-- Thêm mã phân trang -->
+<br />
+
+<div class="container pagetext">
+    <div>
+        @using (Html.BeginForm("Index", "QuanLySanPham", FormMethod.Get))
+        {
+            <p>
+                Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })
+            </p>
+
+        }
+    </div>
+    <div >
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    </div>
+    <div class="page">
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize, sortOrder = ViewBag.SoLuongSortParm }))
+    </div>
+</div>
+
+  
+ <!-- Kết thúc -->
+    <!--Tao link lien ket cac trang@model IEnumerable<BTL_ASP.Models.Hang>-->
+   
+ @*<div class="container pagetext">
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+            <div class="page">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+            </div>
+        </div>*@
+    <style>
+        .pagetext {
+            text-align: center;
+        }
+
+        .page {
+        }
+
+            .page ul li {
+                list-style: none;
+                display: inline;
+            }
+
+            .page li {
+                padding: 5px;
+            }
+
+        .newitem {
+            width: 120px;
+    height: 30px;
+    background-color: deepskyblue;
+    color: black;
+    border: solid cornflowerblue;
+    text-align: center;
+    font-family: serif;
+        }
+
+            .newitem a {
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+            }
+    </style>
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $("#dialog-confirm").dialog({
+            autoOpen: false,
+            resizable: false,
+            width: 500,
+            modal: true,
+            buttons: {
+                "Delete this item": function () {
+                    $(this).dialog("close");
+                },
+                Cancel: function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $("[data-dialog-confirm]").click(function (e) {
+            e.preventDefault();
+            var theHREF = $(this).attr("href");
+            $("#dialog-confirm").dialog('option', 'buttons', {
+                "Yes":
+                function () {
+                    $.get(theHREF, null, function () { refreshList() });
+                    $(this).dialog("close");
+                }, "No":
+              function () { $(this).dialog("close"); }
+            });
+            $("#dialog-confirm").dialog("open");
+        });
+    </script>

@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BackEnd.master.cs" Inherits="GUI.Views.Admin.BackEnd" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+    <link href="../../contents/admincss/style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+        <div id="header">
+            <div id="logo">
+                <img src="../../contents/admincss/logo2.jpg" />
+            </div>
+            <div id="loginAdmin">               
+                    <img src="../../contents/admincss/logo2.jpg" />                           
+                    <span style="color:red;" id="txtName">SimNguyen
+                       </span>              
+            </div>
+        </div> <%-- end header--%>
+        <div id="main">
+          <div id="mainLeft">
+              <ul>
+                  <li><a href="QuanTri.aspx">Databoard</a></li>
+                  <li><a href="QuanLyHang.aspx">Quản Lý Hàng</a></li>
+                  <li><a href="#">Quản Lý Order</a></li>
+              </ul>
+          </div><%-- end mainLeft--%>
+            <div id="mainRight">
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="main_body" runat="server">
+                        Nọi dung tin ở đay
+                    </asp:ContentPlaceHolder>
+                </div><%-- end content--%>
+            </div><%-- end mainRight--%>
+        </div><%-- end main--%>
+        <div style="clear:both"></div>
+        <div id="footer">
+           <p> nguyen thị sinm</p>
+            <p>Lienj hẹ 793ry2fnb</p>
+        </div>
+    </div><%-- end page--%>
+    </form>
+    
+</body>
+</html>

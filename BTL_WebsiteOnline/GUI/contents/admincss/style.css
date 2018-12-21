@@ -1,0 +1,123 @@
+﻿body {
+}
+#header{
+    height:50px;
+    background-color:darkcyan;
+}
+#header #logo{
+    float:left;
+}
+#header #logo img{
+    width:30px;
+    height:30px;
+    padding:5px;
+}
+#header #loginAdmin{
+    float:right;
+    margin-right:20px;
+    padding:5px;
+}
+#header #loginAdmin img{
+    width:30px;
+    height:30px;
+}
+#main{
+   
+    width:100%;
+}
+#main #mainLeft{
+    float: left;
+    background-color:black;
+    width:20%;  
+    min-height: 600px;
+    font-weight:bold;
+	font-size:14px;
+    
+}
+#main #mainLeft ul{
+    padding-top:20px;
+    padding-left:10px;
+  
+    
+}
+#main #mainLeft li{
+    list-style:none;
+    padding-left:10px;
+    padding-top:20px;
+    padding-bottom:10px;
+    border-bottom:solid 3px white;
+}
+#main #mainLeft ul li:hover {
+    background-color: maroon;
+}
+#main #mainLeft ul li a{
+    display:block;	
+	padding-left:22px;	
+	text-decoration:none;
+	color:white;
+    font-size: 16px;
+}
+#main #mainRight{
+    min-height: 600px;
+ width:80%;
+ float: left;
+}
+#main #mainRight #content{
+    padding-top:30px;
+    
+}
+#main #mainRight #content #info{
+    text-align: center;
+    
+    padding-top:50px;
+}
+#footer {
+	color:#FFF;
+	width:100%;
+	background:#666;
+	overflow:hidden; 
+	border-top:5px solid #F66D05;/* đường viền cam*/
+}
+#footer p {
+	float:left; 
+	padding:20px 40px;
+	width: 351px;
+}
+/*Quản lý hàng*/
+#qlHang{
+
+}
+#TQHang{
+    height:100px;
+   
+    padding-left:50px;
+    padding-top:20px;
+    
+}
+ #TQHang #loc{
+    height:50px;
+    
+}
+#qlHang #TQHang #tkHang{
+    padding-top:20px;
+    padding-bottom:30px;
+}
+.btnThemSP{
+    height:30px;
+    background-color:#0094ff;
+    color:white;
+    border: solid 2px cadetblue;
+  float: left;
+    margin-right: 100px;
+    width: 120px;
+}
+/*end quản lý hàng*/
+/*Thếm sản phẩm*/
+#qlHang #addSP{
+    margin-left: 20px;
+    font-size:19px;
+	font-family: Arial, "Times New Roman", Times, serif;
+    background-color: #efefef;      
+        padding-bottom: 30px;
+}
+/*end thêm sản phẩm*/

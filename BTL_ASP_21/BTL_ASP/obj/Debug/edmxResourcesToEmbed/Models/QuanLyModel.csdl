@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_TikiNowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="HangID" />
+    </Key>
+    <Property Name="HangID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HangName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HangImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LoaiHangID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ThuongHieuID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NhaCungCapID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="LoaiHang" Relationship="DB_TikiNowModel.FK_Hang_LoaiHang" FromRole="Hang" ToRole="LoaiHang" />
+    <NavigationProperty Name="NhaCungCap" Relationship="DB_TikiNowModel.FK_Hang_NhaCungCap" FromRole="Hang" ToRole="NhaCungCap" />
+    <NavigationProperty Name="ThuongHieu" Relationship="DB_TikiNowModel.FK_Hang_ThuongHieu" FromRole="Hang" ToRole="ThuongHieu" />
+  </EntityType>
+  <EntityType Name="LoaiHang">
+    <Key>
+      <PropertyRef Name="LoaiHangID" />
+    </Key>
+    <Property Name="LoaiHangID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LoaiHangName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="DB_TikiNowModel.FK_Hang_LoaiHang" FromRole="LoaiHang" ToRole="Hang" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="NhaCungCapID" />
+    </Key>
+    <Property Name="NhaCungCapID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NhaCungCapName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhaCungCapDiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="DB_TikiNowModel.FK_Hang_NhaCungCap" FromRole="NhaCungCap" ToRole="Hang" />
+  </EntityType>
+  <EntityType Name="QTAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThuongHieu">
+    <Key>
+      <PropertyRef Name="ThuongHieuID" />
+    </Key>
+    <Property Name="ThuongHieuID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ThuongHieuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="DB_TikiNowModel.FK_Hang_ThuongHieu" FromRole="ThuongHieu" ToRole="Hang" />
+  </EntityType>
+  <EntityContainer Name="DB_TikiNowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hangs" EntityType="Self.Hang" />
+    <EntitySet Name="LoaiHangs" EntityType="Self.LoaiHang" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="QTAdmins" EntityType="Self.QTAdmin" />
+    <EntitySet Name="ThuongHieux" EntityType="Self.ThuongHieu" />
+    <EntitySet Name="sysdiagrams" EntityType="DB_TikiNowModel.sysdiagram" />
+    <AssociationSet Name="FK_Hang_LoaiHang" Association="DB_TikiNowModel.FK_Hang_LoaiHang">
+      <End Role="LoaiHang" EntitySet="LoaiHangs" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hang_NhaCungCap" Association="DB_TikiNowModel.FK_Hang_NhaCungCap">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hang_ThuongHieu" Association="DB_TikiNowModel.FK_Hang_ThuongHieu">
+      <End Role="ThuongHieu" EntitySet="ThuongHieux" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <EntitySet Name="KhachHangs" EntityType="DB_TikiNowModel.KhachHang" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Hang_LoaiHang">
+    <End Type="DB_TikiNowModel.LoaiHang" Role="LoaiHang" Multiplicity="0..1" />
+    <End Type="DB_TikiNowModel.Hang" Role="Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHang">
+        <PropertyRef Name="LoaiHangID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="LoaiHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hang_NhaCungCap">
+    <End Type="DB_TikiNowModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
+    <End Type="DB_TikiNowModel.Hang" Role="Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="NhaCungCapID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="NhaCungCapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hang_ThuongHieu">
+    <End Type="DB_TikiNowModel.ThuongHieu" Role="ThuongHieu" Multiplicity="0..1" />
+    <End Type="DB_TikiNowModel.Hang" Role="Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThuongHieu">
+        <PropertyRef Name="ThuongHieuID" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="ThuongHieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KhachHangName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
